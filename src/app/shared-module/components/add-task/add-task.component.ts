@@ -29,7 +29,7 @@ export class AddTaskComponent implements OnInit {
  }
  
  confirmTask(): void {
-   this.newTaskForm.get('date').setValue(new Date());
+   //this.newTaskForm.get('date').setValue(new Date());
    this.newTask.emit(this.newTaskForm.value);
    this.modalRef.hide();
    this.newTaskForm.reset();
