@@ -1,4 +1,6 @@
-<p>task works!</p>
-<alert type="success">
-    <strong>Well done!</strong> You successfully read this important alert message.
-</alert>
+<p class="task-title">{{ task.title }}</p>
+<span class="task-description">{{ task.description }}</span>
+<div class="task-footer">
+    <span class="task-date">{{ task.date | date:'shortDate' }}</span>
+    <span class="task-date">{{ task.deadline | date:'shortDate' }}</span>
+</div>

@@ -37,6 +37,7 @@ export class AddTaskComponent implements OnInit {
  
  public openAddModal(template: TemplateRef<any>): void {
    this.modalRef = this.modalService.show(template);
+   this.newTaskForm.get("date").setValue(new Date());
  }
 
 }

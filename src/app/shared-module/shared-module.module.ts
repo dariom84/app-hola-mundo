@@ -10,7 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 @NgModule({
- declarations: [TaskComponent, AddTaskComponent, TasksListComponent,HeaderComponent],
+ declarations: [TaskComponent, AddTaskComponent, TasksListComponent, HeaderComponent],
  imports: [
    CommonModule,
    ReactiveFormsModule,
@@ -19,7 +19,7 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
    BsDatepickerModule.forRoot()
  ],
  exports:[
-   TaskComponent, AddTaskComponent, TasksListComponent,HeaderComponent
+   TaskComponent, AddTaskComponent, TasksListComponent, HeaderComponent
  ]
 })
 

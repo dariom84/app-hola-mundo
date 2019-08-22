@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { TaskComponent } from './shared-module/components/task/task.component';
-import { AddTaskComponent } from './shared-module/components/add-task/add-task.component';
+import { MyTasksComponent } from './pages/my-task/my-task.component';
 
 const routes: Routes = [
   {
@@ -11,11 +10,7 @@ const routes: Routes = [
   },
   {
     path: 'task',
-    component: TaskComponent
-  },
-  {
-    path: 'addTask',
-    component: AddTaskComponent
+    component: MyTasksComponent
   },
   {
     path: '',

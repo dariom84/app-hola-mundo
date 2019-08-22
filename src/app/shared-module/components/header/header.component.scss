@@ -1,12 +1,10 @@
-:host{
-    text-align: center;
-
-    .div {
-        background: red;
-        text-align: right;
-    }
-
-    #div_2{
-        background: burlywood;
-    }
-} 
+:host {
+    display: flex;
+    position: sticky;
+    justify-content: center;
+    top: 0;
+    width: 100%;
+    padding: 15px 0;
+    background-color: #f76e1e;
+    color: #fff;
+}

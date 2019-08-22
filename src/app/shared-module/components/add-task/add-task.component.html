@@ -15,7 +15,9 @@
            <input id="description" type="text" formControlName="description" class="form-control">
            <label for="deadline">Realizar antes de:</label>
            <input id="deadline" type="text" formControlName="deadline" class="form-control" bsDatepicker [bsConfig]="{ adaptivePosition: true }">
-       </form>
+           <label for="date">Creado:</label>
+           <input id="date" type="text" formControlName="date" class="form-control" disabled bsDatepicker [bsConfig]="{ adaptivePosition: true }">
+        </form>
    </div>
    <div class="modal-footer">
        <button class="btn btn-primary" (click)="confirmTask()" [disabled]="!newTaskForm.valid">Confirm</button>
