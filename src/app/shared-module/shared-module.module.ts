@@ -8,6 +8,7 @@ import { AlertModule } from 'ngx-bootstrap/alert';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { LocalStorageService } from './services/local-storage.service';
 
 @NgModule({
  declarations: [TaskComponent, AddTaskComponent, TasksListComponent, HeaderComponent],
@@ -18,6 +19,9 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
    ModalModule.forRoot(),
    BsDatepickerModule.forRoot()
  ],
+  providers: [
+    LocalStorageService
+  ],
  exports:[
    TaskComponent, AddTaskComponent, TasksListComponent, HeaderComponent
  ]
