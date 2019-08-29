@@ -17,7 +17,7 @@ import { MyTasksComponent } from './pages/my-task/my-task.component';
     BrowserModule,
     AppRoutingModule,
     SharedModule,
-    BrowserAnimationsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

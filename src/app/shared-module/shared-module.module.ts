@@ -9,6 +9,8 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { LocalStorageService } from './services/local-storage.service';
+import { HttpClientModule } from '@angular/common/http';
+import { WeatherService } from './services/weather.service';
 
 @NgModule({
  declarations: [TaskComponent, AddTaskComponent, TasksListComponent, HeaderComponent],
@@ -17,10 +19,12 @@ import { LocalStorageService } from './services/local-storage.service';
    ReactiveFormsModule,
    AlertModule.forRoot(),
    ModalModule.forRoot(),
-   BsDatepickerModule.forRoot()
+   BsDatepickerModule.forRoot(),
+   HttpClientModule
  ],
   providers: [
-    LocalStorageService
+    LocalStorageService,
+    WeatherService
   ],
  exports:[
    TaskComponent, AddTaskComponent, TasksListComponent, HeaderComponent
