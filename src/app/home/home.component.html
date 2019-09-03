@@ -1,14 +1,12 @@
-<div class="input-group mb-3 mt-2">
-    <input type="text" class="form-control" placeholder="Ingrese una cuidad" aria-label="Ingrese una cuidad" aria-describedby="button-addon2" #cityName>
-    <div class="input-group-append">
-      <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="searchWeather(cityName.value)" >Buscar</button>
+<section class="weather">
+    <form >
+        <div class="input-group mb-3 mt-5">
+        <input type="text" class="form-control" placeholder="Ingrese Ciudad" #searchParam>
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" (click)="searchWeather(searchParam.value)">Buscar</button>
+        </div>
     </div>
-  </div>
+    </form>
+</section>
 
-<div *ngIf="weatherCity" class="card text-center" style="width: 18rem;">
-    <div class="card-body">
-        <h5 class="card-title">{{ weatherCity }}</h5>
-        <p class="card-text">{{ weatherDescription }} <img src="{{ weatherIcon }}" width="50px" height="50px" alt=""> </p> 
-        <p>{{ weatherTemp }}</p>
-    </div>
-</div>
+<app-weather-card [currentWeather]="currentWeather" [isLoading]="isLoading"></app-weather-card>

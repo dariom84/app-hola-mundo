@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { WeatherService } from '../shared-module/services/weather.service';
 
 @Component({
@@ -7,26 +7,35 @@ import { WeatherService } from '../shared-module/services/weather.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  public weatherDescription: string = "";
-  public weatherTemp: string = "";
-  public weatherCity: string = "";
-  public weatherIcon: string = "";
+  
+  public currentWeather: any = null;
+  public isLoading: boolean = false;
 
   constructor(private weatherService: WeatherService) {}
+  
+  searchWeather(param: string): void {
+    this.isLoading = true;
+    this.currentWeather= null;
 
-  searchWeather(cityName){
-    this.weatherService.getWeather(cityName).subscribe(
+    let params = {
+      q: param,
+      units: 'metric',
+      type: 'link'
+    }
+
+    this.weatherService.getWeather(params).subscribe(
       res => {
-        console.log(res);
-        this.weatherDescription = res.list[0].weather[0].description;
-        this.weatherTemp = res.list[0].main.temp;
-        this.weatherCity = res.list[0].name;
-        this.weatherIcon = "http://openweathermap.org/img/wn/" + res.list[0].weather[0].icon + "@2x.png";
+        this.currentWeather = res;
+        this.isLoading = false;
       },
-      
-      error => console.log(error)
+      err => {
+        this.isLoading = false;
+        console.error(err)
+      }
     )
+
   }
+
 
   ngOnInit() { }
 }
