@@ -11,9 +11,20 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { LocalStorageService } from './services/local-storage.service';
 import { HttpClientModule } from '@angular/common/http';
 import { WeatherService } from './services/weather.service';
+import { CentigradePipe } from './pipes/centigrade.pipe';
+import { HumidityPercentPipe } from './pipes/humidity-percent.pipe';
+import { WindSpeedPipe } from './pipes/wind-speed.pipe';
 
 @NgModule({
- declarations: [TaskComponent, AddTaskComponent, TasksListComponent, HeaderComponent],
+ declarations: [
+    TaskComponent, 
+    AddTaskComponent, 
+    TasksListComponent, 
+    HeaderComponent, 
+    CentigradePipe, 
+    HumidityPercentPipe, 
+    WindSpeedPipe
+  ],
  imports: [
    CommonModule,
    ReactiveFormsModule,
@@ -27,7 +38,13 @@ import { WeatherService } from './services/weather.service';
     WeatherService
   ],
  exports:[
-   TaskComponent, AddTaskComponent, TasksListComponent, HeaderComponent
+   TaskComponent, 
+   AddTaskComponent, 
+   TasksListComponent, 
+   HeaderComponent,
+   CentigradePipe,
+   HumidityPercentPipe,
+   WindSpeedPipe
  ]
 })
 

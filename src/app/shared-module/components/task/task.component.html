@@ -4,4 +4,5 @@
     <span class="task-date">{{ task.date | date:'shortDate' }}</span>
     <span class="task-date">{{ task.deadline | date:'shortDate' }}</span>
 </div>
-<button class="btn btn-danger btn-delete" (click)="deleteTask()">Delete</button>
+<button class="btn btn-danger btn-task delete" (click)="deleteTask()">Delete</button>
+<button class="btn btn-success btn-task done" (click)="task.isDone = !task.isDone" [ngClass]="{'btn-success':!task.isDone, 'btn-outline-success':task.isDone}">Done</button>

@@ -6,6 +6,7 @@
     padding: 10px;
     margin-bottom: 10px;
     background-color: white;
+    position: relative;
 
     .task-title {
         font-size: 22px;
@@ -27,6 +28,19 @@
             &.danger {
                 color:red;
             }
+        }
+    }
+
+    .btn-task {
+        position: absolute;
+        right: 8px;
+
+        &.delete{
+            top: 8px;
+        }
+
+        &.done{
+            top: 50px;
         }
     }
 }

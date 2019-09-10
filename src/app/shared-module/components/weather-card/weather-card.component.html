@@ -7,9 +7,9 @@
         <span class="coord">({{ city.coord.lat }}, {{ city.coord.lon }})</span>
     </div>
     <div class="weather-card-body">
-        <span>Temperatura: {{ city.main.temp }}</span>
-        <span>Humedad: {{ city.main.humidity }}</span>
-        <span>Velocidad del viento: {{ city.wind.speed }}</span>
+        <span>Temperatura: {{ city.main.temp | centigrade }}</span>
+        <span>Humedad: {{ city.main.humidity | humidityPercent | percent }}</span>
+        <span>Velocidad del viento: {{ city.wind.speed | windSpeed }}</span>
     </div>
 
 </div>
