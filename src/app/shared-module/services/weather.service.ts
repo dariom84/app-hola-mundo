@@ -9,12 +9,7 @@ export class WeatherService {
 
   constructor(private http: HttpClient) { }
 
-  getWeather(cityName: any): Observable<any> {
-    let params: any = {};
-
-    params.q = cityName;
-    params.units = 'metric';
-    params.type = "accurate";
+  getWeather(params: any): Observable<any> {
 
     const httpOptions = {
       headers: new HttpHeaders({
